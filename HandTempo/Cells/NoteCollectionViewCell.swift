@@ -29,7 +29,7 @@ class NoteCollectionViewCell: UICollectionViewCell
         backgroundView = view
         
         let selectedView = UIView.init(frame: rect)
-        selectedView.backgroundColor = .blue
+        selectedView.backgroundColor = .cyan
         selectedBackgroundView = selectedView
     }
 

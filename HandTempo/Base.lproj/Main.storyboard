@@ -46,8 +46,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Songs" id="RfH-LG-cwh"/>
+                    <navigationItem key="navigationItem" title="Songs" id="RfH-LG-cwh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rns-nP-V4f">
+                            <connections>
+                                <action selector="buttonAddSongDidPress:" destination="BYZ-38-t0r" id="SAy-0g-GsY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="2vC-xD-ol8" id="iEo-Sn-oXp"/>
                         <segue destination="vLE-Bz-fQ6" kind="show" identifier="segueID" id="pqz-h9-a5Y"/>
                     </connections>
                 </viewController>

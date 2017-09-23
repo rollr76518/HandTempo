@@ -27,8 +27,19 @@ class SongListViewController: UIViewController
     {
         super.viewDidLoad()
         
+        setupDemoSongs()
+        setupTableView()
+    }
+    
+    func setupDemoSongs()
+    {
         littleStar = Song.init(name: "小星星", notes:  "31,31,35,35,36,36,35,00,34,34,33,33,32,32,31,00,35,35,34,34,33,33,32,00,35,35,34,34,33,33,32,00,31,31,35,35,36,36,35,00,34,34,33,33,32,32,31,00".separatedToNotes())
         londonBridge = Song.init(name: "倫敦鐵橋", notes: "35,36,35,34,33,34,35,00,32,33,34,00,33,34,35,00,35,36,35,34,33,34,35,00,32,00,35,00,33,31,00,00,00".separatedToNotes())
+    }
+    
+    func setupTableView()
+    {
+        tableView.tableFooterView = UIView.init(frame: CGRect.zero)
     }
     
     // MARK: - IBActions

@@ -26,7 +26,46 @@ class SongPlayerViewController: UIViewController
         
         prepareForPlayNotes()
         setupCollectionView()
+        startUpdateAccelerometer()
+
+    }
+
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(animated)
         
+        manager.stopAccelerometerUpdates()
+    }
+    
+    func playNote()
+    {
+        if currentIndex >= song.notes.count {
+            prepareForPlayNotes()
+            return
+        }
+
+        collectionView.selectItem(at: IndexPath.init(row: currentIndex, section: 0), animated: true, scrollPosition: .bottom)
+
+        let fileName = song.notes[currentIndex].songNoteFileName()
+        SoundManager.shared.play(fileName)
+        
+        self.currentIndex = self.currentIndex + 1
+    }
+    
+    func prepareForPlayNotes()
+    {
+        currentIndex = 0
+        shouldDowning = true
+        collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
+    }
+    
+    func setupCollectionView()
+    {
+        collectionView.register(UINib.init(nibName: NoteCollectionViewCell.cellID, bundle: nil), forCellWithReuseIdentifier: NoteCollectionViewCell.cellID)
+    }
+    
+    func startUpdateAccelerometer()
+    {
         manager.startAccelerometerUpdates(to: OperationQueue.main) { (data, error) in
             
             if let data = data {
@@ -45,39 +84,6 @@ class SongPlayerViewController: UIViewController
                 }
             }
         }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool)
-    {
-        super.viewDidDisappear(animated)
-        
-        manager.stopAccelerometerUpdates()
-    }
-    
-    func playNote()
-    {
-        collectionView.selectItem(at: IndexPath.init(row: currentIndex, section: 0), animated: true, scrollPosition: .bottom)
-
-        if currentIndex >= song.notes.count - 1 {
-            prepareForPlayNotes()
-            return
-        }
-        
-        let fileName = song.notes[currentIndex].songNoteFileName()
-        SoundManager.shared.play(fileName)
-        
-        self.currentIndex = self.currentIndex + 1
-    }
-    
-    func prepareForPlayNotes()
-    {
-        currentIndex = 0
-        shouldDowning = true
-    }
-    
-    func setupCollectionView()
-    {
-        collectionView.register(UINib.init(nibName: NoteCollectionViewCell.cellID, bundle: nil), forCellWithReuseIdentifier: NoteCollectionViewCell.cellID)
     }
 }
 
