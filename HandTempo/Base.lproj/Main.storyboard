@@ -20,6 +20,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2vC-xD-ol8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ESz-E9-ZCm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vvh-kh-gBg"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,7 +37,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Songs" id="RfH-LG-cwh"/>
                     <connections>
-                        <segue destination="vLE-Bz-fQ6" kind="show" id="pqz-h9-a5Y"/>
+                        <segue destination="vLE-Bz-fQ6" kind="show" identifier="segueID" id="pqz-h9-a5Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

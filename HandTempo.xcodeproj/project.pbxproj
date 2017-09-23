@@ -13,6 +13,8 @@
 		94D9C13A1F76559E00B7AE03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D9C1381F76559E00B7AE03 /* LaunchScreen.storyboard */; };
 		94D9C1431F7658AB00B7AE03 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C1421F7658AB00B7AE03 /* SongListViewController.swift */; };
 		94D9C1451F7658C900B7AE03 /* SongPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C1441F7658C900B7AE03 /* SongPlayerViewController.swift */; };
+		94D9C15F1F765A0A00B7AE03 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C15E1F765A0A00B7AE03 /* DataManager.swift */; };
+		94D9C1611F765A5300B7AE03 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C1601F765A5300B7AE03 /* SoundManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,30 @@
 		94D9C13B1F76559E00B7AE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94D9C1421F7658AB00B7AE03 /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
 		94D9C1441F7658C900B7AE03 /* SongPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerViewController.swift; sourceTree = "<group>"; };
+		94D9C1471F7659C200B7AE03 /* FmPiano_41.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_41.mp3; sourceTree = "<group>"; };
+		94D9C1481F7659C200B7AE03 /* FmPiano_53.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_53.mp3; sourceTree = "<group>"; };
+		94D9C1491F7659C200B7AE03 /* FmPiano_36.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_36.mp3; sourceTree = "<group>"; };
+		94D9C14A1F7659C200B7AE03 /* FmPiano_54.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_54.mp3; sourceTree = "<group>"; };
+		94D9C14B1F7659C200B7AE03 /* FmPiano_56.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_56.mp3; sourceTree = "<group>"; };
+		94D9C14C1F7659C200B7AE03 /* FmPiano_00.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_00.mp3; sourceTree = "<group>"; };
+		94D9C14D1F7659C200B7AE03 /* FmPiano_35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_35.mp3; sourceTree = "<group>"; };
+		94D9C14E1F7659C200B7AE03 /* FmPiano_37.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_37.mp3; sourceTree = "<group>"; };
+		94D9C14F1F7659C200B7AE03 /* FmPiano_32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_32.mp3; sourceTree = "<group>"; };
+		94D9C1501F7659C200B7AE03 /* FmPiano_46.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_46.mp3; sourceTree = "<group>"; };
+		94D9C1511F7659C300B7AE03 /* FmPiano_47.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_47.mp3; sourceTree = "<group>"; };
+		94D9C1521F7659C300B7AE03 /* FmPiano_57.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_57.mp3; sourceTree = "<group>"; };
+		94D9C1531F7659C300B7AE03 /* FmPiano_42.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_42.mp3; sourceTree = "<group>"; };
+		94D9C1541F7659C300B7AE03 /* FmPiano_44.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_44.mp3; sourceTree = "<group>"; };
+		94D9C1551F7659C300B7AE03 /* FmPiano_52.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_52.mp3; sourceTree = "<group>"; };
+		94D9C1561F7659C300B7AE03 /* FmPiano_34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_34.mp3; sourceTree = "<group>"; };
+		94D9C1571F7659C300B7AE03 /* FmPiano_51.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_51.mp3; sourceTree = "<group>"; };
+		94D9C1581F7659C400B7AE03 /* FmPiano_45.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_45.mp3; sourceTree = "<group>"; };
+		94D9C1591F7659C400B7AE03 /* FmPiano_55.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_55.mp3; sourceTree = "<group>"; };
+		94D9C15A1F7659C400B7AE03 /* FmPiano_43.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_43.mp3; sourceTree = "<group>"; };
+		94D9C15B1F7659C500B7AE03 /* FmPiano_31.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_31.mp3; sourceTree = "<group>"; };
+		94D9C15C1F7659C500B7AE03 /* FmPiano_33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_33.mp3; sourceTree = "<group>"; };
+		94D9C15E1F765A0A00B7AE03 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		94D9C1601F765A5300B7AE03 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +82,9 @@
 		94D9C12E1F76559E00B7AE03 /* HandTempo */ = {
 			isa = PBXGroup;
 			children = (
+				94D9C1461F7659B600B7AE03 /* Notes */,
 				94D9C1411F76589000B7AE03 /* ViewControllers */,
+				94D9C15D1F7659F400B7AE03 /* Managers */,
 				94D9C12F1F76559E00B7AE03 /* AppDelegate.swift */,
 				94D9C1331F76559E00B7AE03 /* Main.storyboard */,
 				94D9C1361F76559E00B7AE03 /* Assets.xcassets */,
@@ -73,6 +101,44 @@
 				94D9C1441F7658C900B7AE03 /* SongPlayerViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		94D9C1461F7659B600B7AE03 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				94D9C14C1F7659C200B7AE03 /* FmPiano_00.mp3 */,
+				94D9C15B1F7659C500B7AE03 /* FmPiano_31.mp3 */,
+				94D9C14F1F7659C200B7AE03 /* FmPiano_32.mp3 */,
+				94D9C15C1F7659C500B7AE03 /* FmPiano_33.mp3 */,
+				94D9C1561F7659C300B7AE03 /* FmPiano_34.mp3 */,
+				94D9C14D1F7659C200B7AE03 /* FmPiano_35.mp3 */,
+				94D9C1491F7659C200B7AE03 /* FmPiano_36.mp3 */,
+				94D9C14E1F7659C200B7AE03 /* FmPiano_37.mp3 */,
+				94D9C1471F7659C200B7AE03 /* FmPiano_41.mp3 */,
+				94D9C1531F7659C300B7AE03 /* FmPiano_42.mp3 */,
+				94D9C15A1F7659C400B7AE03 /* FmPiano_43.mp3 */,
+				94D9C1541F7659C300B7AE03 /* FmPiano_44.mp3 */,
+				94D9C1581F7659C400B7AE03 /* FmPiano_45.mp3 */,
+				94D9C1501F7659C200B7AE03 /* FmPiano_46.mp3 */,
+				94D9C1511F7659C300B7AE03 /* FmPiano_47.mp3 */,
+				94D9C1571F7659C300B7AE03 /* FmPiano_51.mp3 */,
+				94D9C1551F7659C300B7AE03 /* FmPiano_52.mp3 */,
+				94D9C1481F7659C200B7AE03 /* FmPiano_53.mp3 */,
+				94D9C14A1F7659C200B7AE03 /* FmPiano_54.mp3 */,
+				94D9C1591F7659C400B7AE03 /* FmPiano_55.mp3 */,
+				94D9C14B1F7659C200B7AE03 /* FmPiano_56.mp3 */,
+				94D9C1521F7659C300B7AE03 /* FmPiano_57.mp3 */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		94D9C15D1F7659F400B7AE03 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				94D9C15E1F765A0A00B7AE03 /* DataManager.swift */,
+				94D9C1601F765A5300B7AE03 /* SoundManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,8 +214,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				94D9C1451F7658C900B7AE03 /* SongPlayerViewController.swift in Sources */,
+				94D9C15F1F765A0A00B7AE03 /* DataManager.swift in Sources */,
 				94D9C1301F76559E00B7AE03 /* AppDelegate.swift in Sources */,
 				94D9C1431F7658AB00B7AE03 /* SongListViewController.swift in Sources */,
+				94D9C1611F765A5300B7AE03 /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
