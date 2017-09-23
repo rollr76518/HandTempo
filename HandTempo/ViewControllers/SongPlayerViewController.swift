@@ -13,41 +13,31 @@ class SongPlayerViewController: UIViewController
 {
     open var song: Song!
     
-    internal let manager = CMMotionManager.init()
+    fileprivate let manager = CMMotionManager.init()
     
-    internal var isDowning = true
-
-    internal var currentIndex = 0
-    {
-        didSet
-        {
-            if currentIndex >= song.notes.count {
-                currentIndex = 1
-            }
-            
-            let fileName = "FmPiano_".appending(song.notes[currentIndex - 1]).appending(".mp3")
-            SoundManager.shared.play(fileName)
-        }
-    }
+    fileprivate var shouldDowning: Bool!
+    fileprivate var currentIndex: Int!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        prepareForPlayNotes()
+        
         manager.startAccelerometerUpdates(to: OperationQueue.main) { (data, error) in
             
             if let data = data {
                 if data.acceleration.z > 0.0 {
-                    if self.isDowning == false {
-                        self.isDowning = true
-                        self.currentIndex = self.currentIndex + 1
+                    if self.shouldDowning == false {
+                        self.shouldDowning = true
+                        self.playNote()
                     }
                 }
                 
                 if data.acceleration.z < -1.5 {
-                    if self.isDowning == true {
-                        self.isDowning = false
-                        self.currentIndex = self.currentIndex + 1
+                    if self.shouldDowning == true {
+                        self.shouldDowning = false
+                        self.playNote()
                     }
                 }
             }
@@ -57,6 +47,26 @@ class SongPlayerViewController: UIViewController
     override func viewDidDisappear(_ animated: Bool)
     {
         super.viewDidDisappear(animated)
+        
         manager.stopAccelerometerUpdates()
+    }
+    
+    func playNote()
+    {
+        if currentIndex >= song.notes.count - 1 {
+            prepareForPlayNotes()
+            return
+        }
+        
+        let fileName = song.notes[currentIndex].songNoteFileName()
+        SoundManager.shared.play(fileName)
+        
+        self.currentIndex = self.currentIndex + 1
+    }
+    
+    func prepareForPlayNotes()
+    {
+        currentIndex = 0
+        shouldDowning = true
     }
 }

@@ -53,4 +53,9 @@ extension String
     {
         return String(self.characters.filter { !" \n\t\r.".characters.contains($0) }).components(separatedBy: ",").map({return $0})
     }
+    
+    func songNoteFileName() -> String
+    {
+        return "FmPiano_".appending(self).appending(".mp3")
+    }
 }

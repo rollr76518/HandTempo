@@ -13,12 +13,12 @@ class SoundManager
 {
     static let shared = SoundManager()
 
-    internal let audioEngine = AVAudioEngine.init()
-    internal let outputFormat = AVAudioFormat.init(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 2, interleaved: false)
-    internal let playerNode = AVAudioPlayerNode.init()
-    internal let mixerNode = AVAudioMixerNode.init()
+    fileprivate let audioEngine = AVAudioEngine.init()
+    fileprivate let outputFormat = AVAudioFormat.init(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 2, interleaved: false)
+    fileprivate let playerNode = AVAudioPlayerNode.init()
+    fileprivate let mixerNode = AVAudioMixerNode.init()
     
-    private init()
+    fileprivate init()
     {
         let session = AVAudioSession.sharedInstance()
         try? session.setCategory(AVAudioSessionCategoryPlayAndRecord)
