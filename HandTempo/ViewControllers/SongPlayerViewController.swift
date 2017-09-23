@@ -7,29 +7,56 @@
 //
 
 import UIKit
+import CoreMotion
 
-class SongPlayerViewController: UIViewController {
+class SongPlayerViewController: UIViewController
+{
+    open var song: Song!
+    
+    internal let manager = CMMotionManager.init()
+    
+    internal var isDowning = true
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    internal var currentIndex = 0
+    {
+        didSet
+        {
+            if currentIndex >= song.notes.count {
+                currentIndex = 1
+            }
+            
+            let fileName = "FmPiano_".appending(song.notes[currentIndex - 1]).appending(".mp3")
+            SoundManager.shared.play(fileName)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        manager.startAccelerometerUpdates(to: OperationQueue.main) { (data, error) in
+            
+            if let data = data {
+                if data.acceleration.z > 0.0 {
+                    if self.isDowning == false {
+                        self.isDowning = true
+                        self.currentIndex = self.currentIndex + 1
+                    }
+                }
+                
+                if data.acceleration.z < -1.5 {
+                    if self.isDowning == true {
+                        self.isDowning = false
+                        self.currentIndex = self.currentIndex + 1
+                    }
+                }
+            }
+        }
     }
-    */
-
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        manager.stopAccelerometerUpdates()
+    }
 }

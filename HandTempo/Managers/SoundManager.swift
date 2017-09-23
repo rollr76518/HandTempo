@@ -13,10 +13,10 @@ class SoundManager
 {
     static let shared = SoundManager()
 
-    let audioEngine = AVAudioEngine.init()
-    let outputFormat = AVAudioFormat.init(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 2, interleaved: false)
-    let playerNode = AVAudioPlayerNode.init()
-    let mixerNode = AVAudioMixerNode.init()
+    internal let audioEngine = AVAudioEngine.init()
+    internal let outputFormat = AVAudioFormat.init(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 2, interleaved: false)
+    internal let playerNode = AVAudioPlayerNode.init()
+    internal let mixerNode = AVAudioMixerNode.init()
     
     private init()
     {
@@ -34,16 +34,9 @@ class SoundManager
         try? audioEngine.start()
     }
     
-    func stopAllPlayingNode()
+    open func play(_ fileName: String)
     {
-        playerNode.stop()
-    }
-    
-    // MARK: - Sound Effect
-    
-    func play(_ fileName: String)
-    {
-        playerNode.stop()
+        stopAllPlayingNode()
         
         if let url = Bundle.main.url(forAuxiliaryExecutable: fileName) {
             let file = try? AVAudioFile.init(forReading: url)
@@ -51,7 +44,12 @@ class SoundManager
             playerNode.play()
         }
         else {
-            print("SFX \(fileName) doesn't exist")
+            print("\(fileName) doesn't exist")
         }
+    }
+    
+    open func stopAllPlayingNode()
+    {
+        playerNode.stop()
     }
 }
