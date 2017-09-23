@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" id="6mT-3T-btK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCellID" id="6mT-3T-btK">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6mT-3T-btK" id="o11-he-hXT">
@@ -58,14 +58,40 @@
         <!--Player-->
         <scene sceneID="Boy-It-XKq">
             <objects>
-                <viewController id="vLE-Bz-fQ6" customClass="SongPlayerViewController" customModule="HandTempo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vLE-Bz-fQ6" customClass="SongPlayerViewController" customModule="HandTempo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B3e-cp-XB7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vSP-t0-hTc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8T6-2H-UpP">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vLE-Bz-fQ6" id="Je5-TN-oBc"/>
+                                    <outlet property="delegate" destination="vLE-Bz-fQ6" id="jBv-4n-CdJ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vSP-t0-hTc" firstAttribute="top" secondItem="jd5-Jn-7XX" secondAttribute="top" id="FB1-ip-k90"/>
+                            <constraint firstItem="jd5-Jn-7XX" firstAttribute="bottom" secondItem="vSP-t0-hTc" secondAttribute="bottom" id="V46-5l-lWL"/>
+                            <constraint firstItem="vSP-t0-hTc" firstAttribute="leading" secondItem="jd5-Jn-7XX" secondAttribute="leading" id="aal-W7-wLS"/>
+                            <constraint firstItem="jd5-Jn-7XX" firstAttribute="trailing" secondItem="vSP-t0-hTc" secondAttribute="trailing" id="fz0-6n-9DV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jd5-Jn-7XX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Player" id="sfb-8l-bOY"/>
+                    <connections>
+                        <outlet property="collectionView" destination="vSP-t0-hTc" id="cgA-Gx-r1J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6g-7i-b0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

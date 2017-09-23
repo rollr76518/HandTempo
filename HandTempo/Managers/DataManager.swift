@@ -47,6 +47,11 @@ extension UserDefaults
     }
 }
 
+struct CellID
+{
+    static let tableViewCellID = "tableViewCellID"
+}
+
 extension String
 {
     func separatedToNotes() -> [String]

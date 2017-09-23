@@ -29,6 +29,8 @@
 		94394E7E1F76660C00CA3E19 /* FmPiano_44.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94394E681F76660C00CA3E19 /* FmPiano_44.mp3 */; };
 		94394E7F1F76660C00CA3E19 /* FmPiano_46.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94394E691F76660C00CA3E19 /* FmPiano_46.mp3 */; };
 		94394E801F76660C00CA3E19 /* FmPiano_33.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94394E6A1F76660C00CA3E19 /* FmPiano_33.mp3 */; };
+		94A93EDB1F76724300BEF4FD /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A93ED91F76724300BEF4FD /* NoteCollectionViewCell.swift */; };
+		94A93EDC1F76724300BEF4FD /* NoteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A93EDA1F76724300BEF4FD /* NoteCollectionViewCell.xib */; };
 		94D9C1301F76559E00B7AE03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C12F1F76559E00B7AE03 /* AppDelegate.swift */; };
 		94D9C1351F76559E00B7AE03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D9C1331F76559E00B7AE03 /* Main.storyboard */; };
 		94D9C1371F76559E00B7AE03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D9C1361F76559E00B7AE03 /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 		94394E681F76660C00CA3E19 /* FmPiano_44.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_44.mp3; sourceTree = "<group>"; };
 		94394E691F76660C00CA3E19 /* FmPiano_46.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_46.mp3; sourceTree = "<group>"; };
 		94394E6A1F76660C00CA3E19 /* FmPiano_33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FmPiano_33.mp3; sourceTree = "<group>"; };
+		94A93ED91F76724300BEF4FD /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		94A93EDA1F76724300BEF4FD /* NoteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCollectionViewCell.xib; sourceTree = "<group>"; };
 		94D9C12C1F76559E00B7AE03 /* HandTempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandTempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D9C12F1F76559E00B7AE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94D9C1341F76559E00B7AE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94A93ED61F76720900BEF4FD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				94A93ED91F76724300BEF4FD /* NoteCollectionViewCell.swift */,
+				94A93EDA1F76724300BEF4FD /* NoteCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		94D9C1231F76559E00B7AE03 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				94D9C1461F7659B600B7AE03 /* Notes */,
+				94A93ED61F76720900BEF4FD /* Cells */,
 				94D9C1411F76589000B7AE03 /* ViewControllers */,
 				94D9C15D1F7659F400B7AE03 /* Managers */,
 				94D9C12F1F76559E00B7AE03 /* AppDelegate.swift */,
@@ -236,6 +250,7 @@
 				94394E7E1F76660C00CA3E19 /* FmPiano_44.mp3 in Resources */,
 				94394E6F1F76660C00CA3E19 /* FmPiano_43.mp3 in Resources */,
 				94394E761F76660C00CA3E19 /* FmPiano_00.mp3 in Resources */,
+				94A93EDC1F76724300BEF4FD /* NoteCollectionViewCell.xib in Resources */,
 				94394E751F76660C00CA3E19 /* FmPiano_55.mp3 in Resources */,
 				94394E6B1F76660C00CA3E19 /* FmPiano_45.mp3 in Resources */,
 				94394E711F76660C00CA3E19 /* FmPiano_31.mp3 in Resources */,
@@ -257,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A93EDB1F76724300BEF4FD /* NoteCollectionViewCell.swift in Sources */,
 				94D9C1451F7658C900B7AE03 /* SongPlayerViewController.swift in Sources */,
 				94D9C15F1F765A0A00B7AE03 /* DataManager.swift in Sources */,
 				94D9C1301F76559E00B7AE03 /* AppDelegate.swift in Sources */,
