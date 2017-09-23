@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		94D9C1301F76559E00B7AE03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C12F1F76559E00B7AE03 /* AppDelegate.swift */; };
-		94D9C1321F76559E00B7AE03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C1311F76559E00B7AE03 /* ViewController.swift */; };
 		94D9C1351F76559E00B7AE03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D9C1331F76559E00B7AE03 /* Main.storyboard */; };
 		94D9C1371F76559E00B7AE03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D9C1361F76559E00B7AE03 /* Assets.xcassets */; };
 		94D9C13A1F76559E00B7AE03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D9C1381F76559E00B7AE03 /* LaunchScreen.storyboard */; };
+		94D9C1431F7658AB00B7AE03 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C1421F7658AB00B7AE03 /* SongListViewController.swift */; };
+		94D9C1451F7658C900B7AE03 /* SongPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9C1441F7658C900B7AE03 /* SongPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		94D9C12C1F76559E00B7AE03 /* HandTempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandTempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D9C12F1F76559E00B7AE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94D9C1311F76559E00B7AE03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		94D9C1341F76559E00B7AE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94D9C1361F76559E00B7AE03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94D9C1391F76559E00B7AE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94D9C13B1F76559E00B7AE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D9C1421F7658AB00B7AE03 /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
+		94D9C1441F7658C900B7AE03 /* SongPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		94D9C12E1F76559E00B7AE03 /* HandTempo */ = {
 			isa = PBXGroup;
 			children = (
+				94D9C1411F76589000B7AE03 /* ViewControllers */,
 				94D9C12F1F76559E00B7AE03 /* AppDelegate.swift */,
-				94D9C1311F76559E00B7AE03 /* ViewController.swift */,
 				94D9C1331F76559E00B7AE03 /* Main.storyboard */,
 				94D9C1361F76559E00B7AE03 /* Assets.xcassets */,
 				94D9C1381F76559E00B7AE03 /* LaunchScreen.storyboard */,
 				94D9C13B1F76559E00B7AE03 /* Info.plist */,
 			);
 			path = HandTempo;
+			sourceTree = "<group>";
+		};
+		94D9C1411F76589000B7AE03 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				94D9C1421F7658AB00B7AE03 /* SongListViewController.swift */,
+				94D9C1441F7658C900B7AE03 /* SongPlayerViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D9C1321F76559E00B7AE03 /* ViewController.swift in Sources */,
+				94D9C1451F7658C900B7AE03 /* SongPlayerViewController.swift in Sources */,
 				94D9C1301F76559E00B7AE03 /* AppDelegate.swift in Sources */,
+				94D9C1431F7658AB00B7AE03 /* SongListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
