@@ -115,6 +115,6 @@ extension SongPlayerViewController: UICollectionViewDataSource, UICollectionView
     {
         let width = collectionView.bounds.size.width/4
         
-        return CGSize.init(width: width, height: width)
+        return CGSize.init(width: width, height: width/2)
     }
 }
