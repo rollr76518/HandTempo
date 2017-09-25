@@ -27,7 +27,6 @@ class SongPlayerViewController: UIViewController
         prepareForPlayNotes()
         setupCollectionView()
         startUpdateAccelerometer()
-
     }
 
     override func viewDidDisappear(_ animated: Bool)

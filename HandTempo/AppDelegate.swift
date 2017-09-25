@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        if DataManager.shared.customSongs.count == 0 {
+            let littleStar = Song.init(name: "小星星", notes:  "31,31,35,35,36,36,35,00,34,34,33,33,32,32,31,00,35,35,34,34,33,33,32,00,35,35,34,34,33,33,32,00,31,31,35,35,36,36,35,00,34,34,33,33,32,32,31,00".separatedToNotes())
+            let londonBridge = Song.init(name: "倫敦鐵橋", notes: "35,36,35,34,33,34,35,00,32,33,34,00,33,34,35,00,35,36,35,34,33,34,35,00,32,00,35,00,33,31,00,00,00".separatedToNotes())
+            DataManager.shared.save(toUserDefault: littleStar)
+            DataManager.shared.save(toUserDefault: londonBridge)
+        }
         return true
     }
 

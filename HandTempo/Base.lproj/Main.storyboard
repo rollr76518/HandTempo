@@ -47,6 +47,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Songs" id="RfH-LG-cwh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="xen-kc-V3I">
+                            <connections>
+                                <action selector="buttonEditDidPressed:" destination="BYZ-38-t0r" id="nWf-KL-MRi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rns-nP-V4f">
                             <connections>
                                 <action selector="buttonAddSongDidPress:" destination="BYZ-38-t0r" id="SAy-0g-GsY"/>
