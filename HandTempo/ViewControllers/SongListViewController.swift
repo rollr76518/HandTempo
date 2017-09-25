@@ -13,33 +13,17 @@ class SongListViewController: UIViewController
 
     @IBOutlet var tableView: UITableView!
     
-    var littleStar: Song!
-    var londonBridge: Song!
     var songs: [Song]
     {
         get
         {
-            return DataManager.shared.customSongs + [littleStar, londonBridge]
+            return DataManager.shared.customSongs
         }
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        setupDemoSongs()
-        setupTableView()
-    }
-    
-    func setupDemoSongs()
-    {
-        littleStar = Song.init(name: "小星星", notes:  "31,31,35,35,36,36,35,00,34,34,33,33,32,32,31,00,35,35,34,34,33,33,32,00,35,35,34,34,33,33,32,00,31,31,35,35,36,36,35,00,34,34,33,33,32,32,31,00".separatedToNotes())
-        londonBridge = Song.init(name: "倫敦鐵橋", notes: "35,36,35,34,33,34,35,00,32,33,34,00,33,34,35,00,35,36,35,34,33,34,35,00,32,00,35,00,33,31,00,00,00".separatedToNotes())
-    }
-    
-    func setupTableView()
-    {
-        tableView.tableFooterView = UIView.init(frame: CGRect.zero)
     }
     
     // MARK: - IBActions
@@ -56,7 +40,8 @@ class SongListViewController: UIViewController
             if let songName = alert.textFields![0].text, let notes = alert.textFields![1].text {
                 let song = Song.init(name: songName, notes: notes.separatedToNotes())
                 DataManager.shared.save(toUserDefault: song)
-                self.tableView.reloadData()
+                let indexPath = IndexPath(row: 0, section: 0)
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
             }
         }
         let cancelButton = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
@@ -64,6 +49,13 @@ class SongListViewController: UIViewController
         alert.addAction(cancelButton)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func buttonEditDidPressed(_ sender: UIBarButtonItem)
+    {
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        let newButton = UIBarButtonItem(barButtonSystemItem: tableView.isEditing ? .done:.edit, target: self, action: #selector(buttonEditDidPressed(_:)))
+        navigationItem.setLeftBarButton(newButton, animated: true)
     }
     
     // MARK: - Navigation
@@ -95,5 +87,39 @@ extension SongListViewController: UITableViewDataSource, UITableViewDelegate
         tableView.deselectRow(at: indexPath, animated: true)
         let song = songs[indexPath.row]
         performSegue(withIdentifier: "segueID", sender: song)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        switch editingStyle {
+        case .delete:
+            DataManager.shared.delete(fromUserDefault: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            break
+        case .insert:break
+        case .none:break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle
+    {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    {
+        let song = songs[sourceIndexPath.row]
+        DataManager.shared.delete(fromUserDefault: sourceIndexPath.row)
+        DataManager.shared.save(toUserDefault: song, at: destinationIndexPath.row)
     }
 }

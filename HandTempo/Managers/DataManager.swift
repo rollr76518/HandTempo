@@ -32,8 +32,21 @@ class DataManager
     
     func save(toUserDefault song: Song)
     {
+        save(toUserDefault: song, at: 0)
+    }
+    
+    func save(toUserDefault song: Song, at index: Int)
+    {
         var songs = customSongs
-        songs.insert(song, at: 0)
+        songs.insert(song, at: index)
+        let data = try? PropertyListEncoder.init().encode(songs)
+        UserDefaults.standard.set(data, forKey: UserDefaults.Keys.Songs)
+    }
+    
+    func delete(fromUserDefault index: Int)
+    {
+        var songs = customSongs
+        songs.remove(at: index)
         let data = try? PropertyListEncoder.init().encode(songs)
         UserDefaults.standard.set(data, forKey: UserDefaults.Keys.Songs)
     }
